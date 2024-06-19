@@ -26,8 +26,28 @@ function rollDiceWithAdvantage(diceSize = 6){
     return result;
 }
 
+function rollDiceWithDisadvantage(diceSize = 6){
+    let result = {
+        finalResult: null,
+        rolls: []
+    }
+
+    result.rolls = [
+        rollDice(diceSize),
+        rollDice(diceSize)
+    ];
+
+    // [function, function]
+    // [Number, Number]
+
+    result.finalResult = Math.min(...result.rolls);
+
+    return result;
+}
+
 module.exports = {
     rollDice,
-    rollDiceWithAdvantage
+    rollDiceWithAdvantage,
+    rollDiceWithDisadvantage
 };
 
