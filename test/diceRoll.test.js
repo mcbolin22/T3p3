@@ -137,7 +137,25 @@ describe('As a dungeon master...', () => {
         //     expect(result).toBeGreaterThan(0);
         //     expect(result).toBeLessThanOrEqual(20);
         // });
-    });     
+    });
+    
+    test("...I want to see how many natural 20s I get in a session where I roll 1000 D20's...", () => {
+
+        let diceResults = [];
+
+        for(let i = 0; i < 1000; i++){
+            diceResults.push(rollDice(20));
+        }
+
+        console.log(diceResults);
+        console.log(diceResults.length);
+
+        let arrayOfNatrual20s = diceResults.filter((result) => result == 20);
+        console.log("Number of natural 20s: ", arrayOfNatrual20s.length);
+
+        expect(diceResults.length).toBe(1000);
+        expect(diceResults).toContain(20);
+    });
 });
 // test('Top level test is here', () => {
 
