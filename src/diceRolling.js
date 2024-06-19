@@ -1,4 +1,11 @@
-
+/**
+ * Description: This file contains the functions that simulate the rolling of a dice.
+ * @date 2021-10-27
+ * @author Me
+ * 
+ * @param [diceSize=6] - Number of the size of the dice we wish to roll
+ * @returns A random number between 1 and the dice size
+ */
 
 function rollDice(diceSize = 6){
     let rollResult = Math.floor(Math.random() * diceSize) + 1;
@@ -7,6 +14,7 @@ function rollDice(diceSize = 6){
 
 }
 
+// Will return the highest of two dice rolls
 function rollDiceWithAdvantage(diceSize = 6){
     let result = {
         finalResult: null,
@@ -26,6 +34,7 @@ function rollDiceWithAdvantage(diceSize = 6){
     return result;
 }
 
+// Will return the lowest of two dice rolls
 function rollDiceWithDisadvantage(diceSize = 6){
     let result = {
         finalResult: null,
